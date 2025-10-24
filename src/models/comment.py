@@ -1,5 +1,5 @@
 from pydantic import BaseModel
-from post import UserPostIn
+from .post import UserPostIn
 
 
 class CommentIn(BaseModel):
