@@ -1,7 +1,7 @@
 import uuid
 from fastapi import APIRouter, HTTPException
 from pydantic import UUID4
-from src.models.comment import CommentIn, CommentOut
+from src.models.comment import CommentIn, CommentOut, UserPostWithComment
 from src.routers.post import post_table
 
 
@@ -19,6 +19,15 @@ async def get_comments_on_post(post_id: UUID4):
         comment for comment in comment_table.values()
         if comment['post_id'] == post_id
     ]
+
+
+@router.get("/post/{post_id}", response_model=UserPostWithComment)
+async def get_post_with_comments(post_id: UUID4):
+    post = find_post(post_id)
+    if not post:
+        raise HTTPException(status_code=404, detail="No Post found!")
+
+    return {"post": post, "comments": await get_comments_on_post(post_id)}
 
 
 @router.post("/comment", response_model=CommentOut, status_code=201)

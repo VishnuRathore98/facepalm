@@ -1,10 +1,10 @@
-from pydantic import BaseModel
+from pydantic import UUID4, BaseModel
 from .post import UserPostIn
 
 
 class CommentIn(BaseModel):
     body: str
-    post_id: int
+    post_id: UUID4
 
 
 class CommentOut(CommentIn):
