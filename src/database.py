@@ -1,6 +1,6 @@
 import sqlalchemy
 import databases
-from config import config
+from src.config import config
 
 
 metadata = sqlalchemy.MetaData()
@@ -25,7 +25,7 @@ comment_table = sqlalchemy.Table(
                       sqlalchemy.String
                       ),
     sqlalchemy.Column("post_id",
-                      sqlalchemy.ForeignKey("post.id"),
+                      sqlalchemy.ForeignKey("posts.id"),
                       nullable=False
                       )
 )
