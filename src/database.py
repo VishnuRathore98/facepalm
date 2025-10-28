@@ -9,7 +9,7 @@ metadata = sqlalchemy.MetaData()
 post_table = sqlalchemy.Table(
     "posts",
     metadata,
-    sqlalchemy.Column("id", sqlalchemy.Integer, primary_key=True),
+    sqlalchemy.Column("id", sqlalchemy.String, primary_key=True),
     sqlalchemy.Column("body", sqlalchemy.String)
 )
 
@@ -18,7 +18,7 @@ comment_table = sqlalchemy.Table(
     "comments",
     metadata,
     sqlalchemy.Column("id",
-                      sqlalchemy.Integer,
+                      sqlalchemy.String,
                       primary_key=True
                       ),
     sqlalchemy.Column("body",

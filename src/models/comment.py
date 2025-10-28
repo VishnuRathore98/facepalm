@@ -4,11 +4,11 @@ from .post import UserPostIn
 
 class CommentIn(BaseModel):
     body: str
-    post_id: UUID4
+    post_id: str
 
 
 class CommentOut(CommentIn):
-    id: int
+    id: str
 
 
 class UserPostWithComment(BaseModel):
