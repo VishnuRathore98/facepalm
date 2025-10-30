@@ -4,10 +4,14 @@ version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.12"
+[tool.pytest.ini_options]
+pythonpath = ["facepalm"]
+testpaths = ["src/tests"]
 dependencies = [
     "databases[aiosqlite,asyncpg]>=0.9.0",
     "dotenv>=0.9.9",
     "fastapi>=0.119.1",
+    "httpx>=0.28.1",
     "pydantic-settings>=2.11.0",
     "pytest>=8.4.2",
     "ruff>=0.14.1",

@@ -1,8 +1,8 @@
 import uuid
 from fastapi import APIRouter, HTTPException
 from pydantic import UUID4
-from src.models.comment import CommentIn, CommentOut, UserPostWithComment
-from src.database import post_table, comment_table, database
+from ..models.comment import CommentIn, CommentOut, UserPostWithComment
+from ..database import post_table, comment_table, database
 
 
 router = APIRouter()

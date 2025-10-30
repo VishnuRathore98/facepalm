@@ -1,9 +1,13 @@
 from typing import AsyncGenerator, Generator
 import pytest
 from fastapi.testclient import TestClient
-from src.main import app
-from src.routers.post import post_table
-from src.routers.comment import comment_table
+from httpx import AsyncClient
+import os
+os.environ['ENV_STATE'] = 'test'
+
+
+from ..database import database  # noqa:E402
+from ..main import app  # noqa:E402
 
 
 @pytest.fixture(scope='session')
@@ -15,9 +19,15 @@ def anyio_backend():
 def client() -> Generator:
     yield TestClient(app)
 
- 
+
 @pytest.fixture(autouse=True)
 async def db() -> AsyncGenerator:
-    post_table.clear()
-    comment_table.clear()
+    await database.connect()
     yield
+    await database.disconnect()
+
+
+@pytest.fixture()
+async def async_client(client):
+    async with AsyncClient(app=app, base_url=client.base_url) as ac:
+        yield ac

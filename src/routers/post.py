@@ -1,7 +1,7 @@
 import uuid
 from fastapi import APIRouter
-from src.models.post import UserPostIn, UserPostOut
-from src.database import post_table, database
+from ..models.post import UserPostIn, UserPostOut
+from ..database import post_table, database
 
 
 router = APIRouter()

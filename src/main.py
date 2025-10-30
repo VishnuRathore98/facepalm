@@ -1,7 +1,7 @@
 from fastapi import FastAPI
-from src.routers.post import router as post_router
-from src.routers.comment import router as comment_router
-from src.database import database
+from .routers.post import router as post_router
+from .routers.comment import router as comment_router
+from .database import database
 from contextlib import asynccontextmanager
 
 
