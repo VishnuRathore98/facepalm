@@ -7,7 +7,7 @@ from ..database import post_table, database
 router = APIRouter()
 
 
-@router.post("/posts", response_model=UserPostOut)
+@router.post("/posts", response_model=UserPostOut, status_code=201)
 async def create_post(post: UserPostIn):
     data = post.model_dump()
     new_post = {**data, "id": str(uuid.uuid4())}
