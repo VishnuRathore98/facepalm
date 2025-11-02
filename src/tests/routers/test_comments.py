@@ -19,3 +19,15 @@ async def created_comment(async_client: AsyncClient, create_post: dict):
         post_id=create_post['id'], 
         async_client=async_client
     )
+
+@pytest.mark.anyio
+async def test_create_comment(async_client: AsyncClient, created_post:dict):
+    body = "test comment"
+
+    response = await async_client.post("/comment", json={"body":body, "post_id": created_post["id"]})
+    assert response.status_code == 201
+    assert {
+        "id": response.json()["id"],
+        "body": body,
+        "post_id": created_post["id"]
+    }.items() <= response.json().items()
