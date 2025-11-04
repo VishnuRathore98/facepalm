@@ -3,10 +3,12 @@ from .routers.post import router as post_router
 from .routers.comment import router as comment_router
 from .database import database
 from contextlib import asynccontextmanager
+from src.logging_conf import configure_logging
 
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
+    await configure_logging()
     await database.connect()
     yield
     await database.disconnect()
