@@ -2,10 +2,12 @@ import uuid
 from fastapi import APIRouter
 from ..models.post import UserPostIn, UserPostOut
 from ..database import post_table, database
+import logging
 
 
 router = APIRouter()
 
+logger = logging.getLogger(__name__)
 
 @router.post("/posts", response_model=UserPostOut, status_code=201)
 async def create_post(post: UserPostIn):
@@ -18,5 +20,7 @@ async def create_post(post: UserPostIn):
 
 @router.get("/posts", response_model=list[UserPostOut])
 async def get_posts():
+    logger.info("Getting Posts")
     query = post_table.select()
+    logger.debug(query)
     return await database.fetch_all(query)

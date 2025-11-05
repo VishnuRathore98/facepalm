@@ -1,9 +1,14 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException
+from fastapi.exception_handlers import http_exception_handler
 from .routers.post import router as post_router
 from .routers.comment import router as comment_router
 from .database import database
 from contextlib import asynccontextmanager
 from src.logging_conf import configure_logging
+import logging
+
+
+logger = logging.getLogger(__name__)
 
 
 @asynccontextmanager
@@ -23,3 +28,11 @@ app.include_router(comment_router)
 @app.get("/")
 async def root():
     return {"message": "facepalm api is running!"}
+
+
+# this will give us detailed logs related to HTTPExceptions, we are
+# overwriting the HTTPException.
+@app.exception_handler(HTTPException)
+async def logging_http_exception_handler(request, exception):
+    logger.error(f"HTTPException: {exception.status_code} {exception.detail}")
+    return await http_exception_handler(request, exception)

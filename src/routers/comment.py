@@ -3,13 +3,17 @@ from fastapi import APIRouter, HTTPException
 from pydantic import UUID4
 from ..models.comment import CommentIn, CommentOut, UserPostWithComment
 from ..database import post_table, comment_table, database
+import logging
 
 
 router = APIRouter()
 
+logger = logging.getLogger(__name__)
 
 async def find_post(post_id: UUID4):
+    logger.info(f"Finding post: {post_id}")
     query = post_table.select().where(post_table.c.id == str(post_id))
+    logger.debug(query)
     return await database.fetch_one(query)
 
 

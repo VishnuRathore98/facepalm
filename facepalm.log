@@ -1,0 +1,15 @@
+05-11-2025T08:24:06.067Z | INFO     | uvicorn.error:62 - Application startup complete.
+05-11-2025T08:24:49.703Z | INFO     | src.routers.post:23 - Getting Posts
+05-11-2025T08:24:49.704Z | DEBUG    | src.routers.post:25 - SELECT posts.id, posts.body 
+FROM posts
+05-11-2025T08:24:49.709Z | INFO     | uvicorn.access:476 - 127.0.0.1:33390 - "GET /posts HTTP/1.1" 200
+05-11-2025T09:09:22.471Z | INFO     | uvicorn.error:264 - Shutting down
+05-11-2025T09:09:22.573Z | INFO     | uvicorn.error:67 - Waiting for application shutdown.
+05-11-2025T09:09:22.575Z | INFO     | uvicorn.error:76 - Application shutdown complete.
+05-11-2025T09:09:22.578Z | INFO     | uvicorn.error:94 - Finished server process [12287]
+05-11-2025T09:09:23.238Z | INFO     | uvicorn.error:62 - Application startup complete.
+05-11-2025T09:10:59.471Z | INFO     | uvicorn.error:264 - Shutting down
+05-11-2025T09:10:59.573Z | INFO     | uvicorn.error:67 - Waiting for application shutdown.
+05-11-2025T09:10:59.574Z | INFO     | uvicorn.error:76 - Application shutdown complete.
+05-11-2025T09:10:59.576Z | INFO     | uvicorn.error:94 - Finished server process [13826]
+05-11-2025T09:11:00.226Z | INFO     | uvicorn.error:62 - Application startup complete.
