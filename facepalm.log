@@ -13,3 +13,22 @@ FROM posts
 05-11-2025T09:10:59.574Z | INFO     | uvicorn.error:76 - Application shutdown complete.
 05-11-2025T09:10:59.576Z | INFO     | uvicorn.error:94 - Finished server process [13826]
 05-11-2025T09:11:00.226Z | INFO     | uvicorn.error:62 - Application startup complete.
+06-11-2025T08:09:36.774Z | INFO     | [-] uvicorn.error:62 - Application startup complete.
+06-11-2025T08:10:13.956Z | INFO     | [-] uvicorn.access:476 - 127.0.0.1:45554 - "GET / HTTP/1.1" 200
+06-11-2025T08:10:41.292Z | INFO     | [-] src.routers.post:23 - Getting Posts
+06-11-2025T08:10:41.294Z | DEBUG    | [-] src.routers.post:25 - SELECT posts.id, posts.body 
+FROM posts
+06-11-2025T08:10:41.298Z | INFO     | [-] uvicorn.access:476 - 127.0.0.1:47076 - "GET /posts HTTP/1.1" 200
+06-11-2025T08:11:29.501Z | INFO     | [-] uvicorn.access:476 - 127.0.0.1:32960 - "GET /comment/52cdb114-cea4-4b47-ae10-80422ab09186 HTTP/1.1" 200
+06-11-2025T08:28:53.505Z | INFO     | [-] uvicorn.error:264 - Shutting down
+06-11-2025T08:28:53.608Z | INFO     | [-] uvicorn.error:67 - Waiting for application shutdown.
+06-11-2025T08:28:53.613Z | INFO     | [-] uvicorn.error:76 - Application shutdown complete.
+06-11-2025T08:28:53.621Z | INFO     | [-] uvicorn.error:94 - Finished server process [7493]
+06-11-2025T08:28:55.835Z | INFO     | [-] uvicorn.error:62 - Application startup complete.
+06-11-2025T08:28:59.042Z | INFO     | [-] uvicorn.access:476 - 127.0.0.1:39730 - "GET /comment/52cdb114-cea4-4b47-ae10-80422ab09186 HTTP/1.1" 200
+06-11-2025T08:32:19.865Z | INFO     | [-] uvicorn.error:264 - Shutting down
+06-11-2025T08:32:19.967Z | INFO     | [-] uvicorn.error:67 - Waiting for application shutdown.
+06-11-2025T08:32:19.969Z | INFO     | [-] uvicorn.error:76 - Application shutdown complete.
+06-11-2025T08:32:19.971Z | INFO     | [-] uvicorn.error:94 - Finished server process [8070]
+06-11-2025T08:32:20.770Z | INFO     | [-] uvicorn.error:62 - Application startup complete.
+06-11-2025T08:32:25.535Z | INFO     | [8955f893] uvicorn.access:476 - 127.0.0.1:55054 - "GET /comment/52cdb114-cea4-4b47-ae10-80422ab09186 HTTP/1.1" 200

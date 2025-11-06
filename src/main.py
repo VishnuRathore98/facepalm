@@ -5,6 +5,7 @@ from .routers.comment import router as comment_router
 from .database import database
 from contextlib import asynccontextmanager
 from src.logging_conf import configure_logging
+from asgi_correlation_id import CorrelationIdMiddleware
 import logging
 
 
@@ -20,6 +21,8 @@ async def lifespan(app: FastAPI):
 
 
 app = FastAPI(lifespan=lifespan)
+
+app.add_middleware(CorrelationIdMiddleware)
 
 app.include_router(post_router)
 app.include_router(comment_router)

@@ -7,23 +7,31 @@ async def configure_logging() -> None:
         {
             "version": 1,
             "disable_existing_loggers": False,
+            "filters": {
+                "correlation_id": {
+                    "()": "asgi_correlation_id.CorrelationIdFilter",
+                    "uuid_length": 8 if isinstance(config, DevConfig) else 16,
+                    "default_value": "-"
+                }
+            },
             "formatters": {
                 "console": {
                     "class": "logging.Formatter",
                     "datefmt": "%d-%m-%YT%H:%M:%S",
-                    "format": "%(name)s:%(lineno)d - %(message)s"
+                    "format": "(%(correlation_id)s) %(name)s:%(lineno)d - %(message)s"
                 },
                 "file": {
                     "class": "logging.Formatter",
                     "datefmt": "%d-%m-%YT%H:%M:%S",
-                    "format": "%(asctime)s.%(msecs)03dZ | %(levelname)-8s | %(name)s:%(lineno)d - %(message)s"
+                    "format": "%(asctime)s.%(msecs)03dZ | %(levelname)-8s | [%(correlation_id)s] %(name)s:%(lineno)d - %(message)s"
                 }
             },
             "handlers": {
                 "default": {
                     "class": "rich.logging.RichHandler",
                     "level": "DEBUG",
-                    "formatter": "console"
+                    "formatter": "console",
+                    "filters": ["correlation_id"]
                 },
                 "rotating_file": {
                     "class": "logging.handlers.RotatingFileHandler",
@@ -32,7 +40,8 @@ async def configure_logging() -> None:
                     "filename": "facepalm.log",  # file to save logs to
                     "maxBytes": 1024 * 1024,  # 1MB logs per file
                     "backupCount": 5,  # keep last 5 log files
-                    "encoding": "utf8"  # diff encodings can inc or dec log byte size
+                    "encoding": "utf8",  # diff encodings can inc or dec log byte size
+                    "filters": ["correlation_id"]
                 }
             },
             "loggers": {
