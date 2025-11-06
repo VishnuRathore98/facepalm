@@ -32,3 +32,9 @@ FROM posts
 06-11-2025T08:32:19.971Z | INFO     | [-] uvicorn.error:94 - Finished server process [8070]
 06-11-2025T08:32:20.770Z | INFO     | [-] uvicorn.error:62 - Application startup complete.
 06-11-2025T08:32:25.535Z | INFO     | [8955f893] uvicorn.access:476 - 127.0.0.1:55054 - "GET /comment/52cdb114-cea4-4b47-ae10-80422ab09186 HTTP/1.1" 200
+06-11-2025T09:21:06.225Z | INFO     | [-] uvicorn.error:264 - Shutting down
+06-11-2025T09:21:06.329Z | INFO     | [-] uvicorn.error:67 - Waiting for application shutdown.
+06-11-2025T09:21:06.336Z | INFO     | [-] uvicorn.error:76 - Application shutdown complete.
+06-11-2025T09:21:06.341Z | INFO     | [-] uvicorn.error:94 - Finished server process [8262]
+{"asctime": "06-11-2025T09:22:13", "msecs": 416.0, "levelname": "INFO", "correlation_id": "-", "name": "uvicorn.error", "lineno": 62, "message": "Application startup complete."}
+{"asctime": "06-11-2025T09:22:40", "msecs": 998.0, "levelname": "INFO", "correlation_id": "4cab025f", "name": "uvicorn.access", "lineno": 476, "message": "127.0.0.1:45078 - \"GET /comment/52cdb114-cea4-4b47-ae10-80422ab09186 HTTP/1.1\" 200"}

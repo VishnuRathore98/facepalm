@@ -21,9 +21,9 @@ async def configure_logging() -> None:
                     "format": "(%(correlation_id)s) %(name)s:%(lineno)d - %(message)s"
                 },
                 "file": {
-                    "class": "logging.Formatter",
+                    "class": "pythonjsonlogger.jsonlogger.JsonFormatter",
                     "datefmt": "%d-%m-%YT%H:%M:%S",
-                    "format": "%(asctime)s.%(msecs)03dZ | %(levelname)-8s | [%(correlation_id)s] %(name)s:%(lineno)d - %(message)s"
+                    "format": "%(asctime)s %(msecs)03d %(levelname)-8s %(correlation_id)s %(name)s %(lineno)d %(message)s"
                 }
             },
             "handlers": {
