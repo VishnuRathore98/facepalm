@@ -38,3 +38,40 @@ FROM posts
 06-11-2025T09:21:06.341Z | INFO     | [-] uvicorn.error:94 - Finished server process [8262]
 {"asctime": "06-11-2025T09:22:13", "msecs": 416.0, "levelname": "INFO", "correlation_id": "-", "name": "uvicorn.error", "lineno": 62, "message": "Application startup complete."}
 {"asctime": "06-11-2025T09:22:40", "msecs": 998.0, "levelname": "INFO", "correlation_id": "4cab025f", "name": "uvicorn.access", "lineno": 476, "message": "127.0.0.1:45078 - \"GET /comment/52cdb114-cea4-4b47-ae10-80422ab09186 HTTP/1.1\" 200"}
+{"asctime": "06-11-2025T10:01:31", "msecs": 34.0, "levelname": "INFO", "correlation_id": "-", "name": "uvicorn.error", "lineno": 264, "message": "Shutting down"}
+{"asctime": "06-11-2025T10:01:31", "msecs": 140.0, "levelname": "INFO", "correlation_id": "-", "name": "uvicorn.error", "lineno": 67, "message": "Waiting for application shutdown."}
+{"asctime": "06-11-2025T10:01:31", "msecs": 144.0, "levelname": "INFO", "correlation_id": "-", "name": "uvicorn.error", "lineno": 76, "message": "Application shutdown complete."}
+{"asctime": "06-11-2025T10:01:31", "msecs": 146.0, "levelname": "INFO", "correlation_id": "-", "name": "uvicorn.error", "lineno": 94, "message": "Finished server process [10436]", "color_message": "Finished server process [\u001b[36m%d\u001b[0m]"}
+{"asctime": "07-11-2025T08:04:39", "msecs": 603.0, "levelname": "INFO", "correlation_id": "-", "name": "uvicorn.error", "lineno": 62, "message": "Application startup complete."}
+{"asctime": "07-11-2025T08:05:46", "msecs": 137.0, "levelname": "INFO", "correlation_id": "382594a1", "name": "uvicorn.access", "lineno": 476, "message": "127.0.0.1:60832 - \"GET / HTTP/1.1\" 200"}
+{"asctime": "07-11-2025T08:05:57", "msecs": 847.0, "levelname": "INFO", "correlation_id": "c2ca7b18", "name": "src.routers.post", "lineno": 23, "message": "Getting Posts"}
+{"asctime": "07-11-2025T08:05:57", "msecs": 849.0, "levelname": "DEBUG", "correlation_id": "c2ca7b18", "name": "src.routers.post", "lineno": 25, "message": "SELECT posts.id, posts.body \nFROM posts"}
+{"asctime": "07-11-2025T08:05:57", "msecs": 855.0, "levelname": "INFO", "correlation_id": "c2ca7b18", "name": "uvicorn.access", "lineno": 476, "message": "127.0.0.1:43026 - \"GET /posts HTTP/1.1\" 200"}
+{"asctime": "07-11-2025T08:14:17", "msecs": 273.0, "levelname": "INFO", "correlation_id": "-", "name": "uvicorn.error", "lineno": 264, "message": "Shutting down"}
+{"asctime": "07-11-2025T08:14:17", "msecs": 380.0, "levelname": "INFO", "correlation_id": "-", "name": "uvicorn.error", "lineno": 67, "message": "Waiting for application shutdown."}
+{"asctime": "07-11-2025T08:14:17", "msecs": 386.0, "levelname": "INFO", "correlation_id": "-", "name": "uvicorn.error", "lineno": 76, "message": "Application shutdown complete."}
+{"asctime": "07-11-2025T08:14:17", "msecs": 392.0, "levelname": "INFO", "correlation_id": "-", "name": "uvicorn.error", "lineno": 94, "message": "Finished server process [9893]", "color_message": "Finished server process [\u001b[36m%d\u001b[0m]"}
+{"asctime": "07-11-2025T08:14:19", "msecs": 480.0, "levelname": "INFO", "correlation_id": "-", "name": "uvicorn.error", "lineno": 62, "message": "Application startup complete."}
+{"asctime": "07-11-2025T08:15:19", "msecs": 145.0, "levelname": "INFO", "correlation_id": "a3fb8f67", "name": "src.routers.post", "lineno": 23, "message": "Getting Posts"}
+{"asctime": "07-11-2025T08:15:19", "msecs": 149.0, "levelname": "DEBUG", "correlation_id": "a3fb8f67", "name": "src.routers.post", "lineno": 25, "message": "SELECT posts.id, posts.body \nFROM posts"}
+{"asctime": "07-11-2025T08:15:19", "msecs": 157.0, "levelname": "INFO", "correlation_id": "a3fb8f67", "name": "uvicorn.access", "lineno": 476, "message": "127.0.0.1:39336 - \"GET /posts HTTP/1.1\" 200"}
+{"asctime": "07-11-2025T08:15:44", "msecs": 447.0, "levelname": "INFO", "correlation_id": "5f4ccd27", "name": "src.routers.post", "lineno": 23, "message": "Getting Posts"}
+{"asctime": "07-11-2025T08:15:44", "msecs": 449.0, "levelname": "DEBUG", "correlation_id": "5f4ccd27", "name": "src.routers.post", "lineno": 25, "message": "SELECT posts.id, posts.body \nFROM posts"}
+{"asctime": "07-11-2025T08:15:44", "msecs": 454.0, "levelname": "INFO", "correlation_id": "5f4ccd27", "name": "uvicorn.access", "lineno": 476, "message": "127.0.0.1:55170 - \"GET /posts HTTP/1.1\" 200"}
+{"asctime": "07-11-2025T08:34:33", "msecs": 859.0, "levelname": "INFO", "correlation_id": "47f42c95", "name": "src.routers.post", "lineno": 23, "message": "Getting Posts"}
+{"asctime": "07-11-2025T08:34:33", "msecs": 862.0, "levelname": "DEBUG", "correlation_id": "47f42c95", "name": "src.routers.post", "lineno": 25, "message": "SELECT posts.id, posts.body \nFROM posts"}
+{"asctime": "07-11-2025T08:34:33", "msecs": 870.0, "levelname": "INFO", "correlation_id": "47f42c95", "name": "uvicorn.access", "lineno": 476, "message": "127.0.0.1:41412 - \"GET /posts HTTP/1.1\" 200"}
+{"asctime": "07-11-2025T08:35:34", "msecs": 483.0, "levelname": "INFO", "correlation_id": "01e4bcb2", "name": "src.routers.post", "lineno": 23, "message": "Getting Posts"}
+{"asctime": "07-11-2025T08:35:34", "msecs": 485.0, "levelname": "DEBUG", "correlation_id": "01e4bcb2", "name": "src.routers.post", "lineno": 25, "message": "SELECT posts.id, posts.body \nFROM posts"}
+{"asctime": "07-11-2025T08:35:34", "msecs": 489.0, "levelname": "INFO", "correlation_id": "01e4bcb2", "name": "uvicorn.access", "lineno": 476, "message": "127.0.0.1:50722 - \"GET /posts HTTP/1.1\" 200"}
+{"asctime": "07-11-2025T08:38:05", "msecs": 232.0, "levelname": "INFO", "correlation_id": "-", "name": "uvicorn.error", "lineno": 264, "message": "Shutting down"}
+{"asctime": "07-11-2025T08:38:05", "msecs": 339.0, "levelname": "INFO", "correlation_id": "-", "name": "uvicorn.error", "lineno": 67, "message": "Waiting for application shutdown."}
+{"asctime": "07-11-2025T08:38:05", "msecs": 347.0, "levelname": "INFO", "correlation_id": "-", "name": "uvicorn.error", "lineno": 76, "message": "Application shutdown complete."}
+{"asctime": "07-11-2025T08:38:05", "msecs": 353.0, "levelname": "INFO", "correlation_id": "-", "name": "uvicorn.error", "lineno": 94, "message": "Finished server process [11424]", "color_message": "Finished server process [\u001b[36m%d\u001b[0m]"}
+{"asctime": "07-11-2025T08:38:07", "msecs": 605.0, "levelname": "INFO", "correlation_id": "-", "name": "uvicorn.error", "lineno": 62, "message": "Application startup complete."}
+{"asctime": "07-11-2025T08:38:20", "msecs": 45.0, "levelname": "INFO", "correlation_id": "45ab94f6", "name": "src.routers.post", "lineno": 23, "message": "Getting Posts"}
+{"asctime": "07-11-2025T08:38:20", "msecs": 49.0, "levelname": "DEBUG", "correlation_id": "45ab94f6", "name": "src.routers.post", "lineno": 25, "message": "SELECT posts.id, posts.body \nFROM posts"}
+{"asctime": "07-11-2025T08:38:20", "msecs": 56.0, "levelname": "INFO", "correlation_id": "45ab94f6", "name": "uvicorn.access", "lineno": 476, "message": "127.0.0.1:40846 - \"GET /posts HTTP/1.1\" 200"}
+{"asctime": "07-11-2025T09:36:57", "msecs": 135.0, "levelname": "INFO", "correlation_id": "75fb6277", "name": "src.routers.post", "lineno": 23, "message": "Getting Posts"}
+{"asctime": "07-11-2025T09:36:57", "msecs": 140.0, "levelname": "DEBUG", "correlation_id": "75fb6277", "name": "src.routers.post", "lineno": 25, "message": "SELECT posts.id, posts.body \nFROM posts"}
+{"asctime": "07-11-2025T09:36:57", "msecs": 149.0, "levelname": "INFO", "correlation_id": "75fb6277", "name": "uvicorn.access", "lineno": 476, "message": "127.0.0.1:42142 - \"GET /posts HTTP/1.1\" 200"}

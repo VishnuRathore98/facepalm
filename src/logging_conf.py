@@ -1,5 +1,29 @@
+import logging
 from logging.config import dictConfig
 from src.config import DevConfig, config
+
+
+def obfuscated(email: str, obfuscated_length: int) -> int:
+    characters = email[:obfuscated_length]
+    first, last = email.split('@')
+    return characters + ('*' * (len(first) - characters)) + '@' + last
+
+
+class EmailObfuscationFilter(logging.Filter):
+
+    def __init__(self, name: str = "", obfuscated_length: int = 2) -> None:
+        super().__init__(name)
+        self.obfuscated_length = obfuscated_length
+
+    def filter(self, record: logging.LogRecord) -> bool:
+        if "email" in record.__dict__:
+            record.email = obfuscated(record.email, self.obfuscated_length)
+        return True
+
+
+handlers = ["default", "rotating_file", "logtail"]
+if isinstance(config, DevConfig):
+    handlers = ["default", "rotating_file", "logtail"]
 
 
 async def configure_logging() -> None:
@@ -12,6 +36,10 @@ async def configure_logging() -> None:
                     "()": "asgi_correlation_id.CorrelationIdFilter",
                     "uuid_length": 8 if isinstance(config, DevConfig) else 16,
                     "default_value": "-"
+                },
+                "email_obfuscation": {
+                    "()": EmailObfuscationFilter,
+                    "obfuscated_length": 2 if isinstance(config, DevConfig) else 0
                 }
             },
             "formatters": {
@@ -31,7 +59,7 @@ async def configure_logging() -> None:
                     "class": "rich.logging.RichHandler",
                     "level": "DEBUG",
                     "formatter": "console",
-                    "filters": ["correlation_id"]
+                    "filters": ["correlation_id", "email_obfuscation"]
                 },
                 "rotating_file": {
                     "class": "logging.handlers.RotatingFileHandler",
@@ -42,6 +70,13 @@ async def configure_logging() -> None:
                     "backupCount": 5,  # keep last 5 log files
                     "encoding": "utf8",  # diff encodings can inc or dec log byte size
                     "filters": ["correlation_id"]
+                },
+                "logtail": {
+                    "class": "logtail.LogtailHandler",
+                    "level": "DEBUG",
+                    "formatter": "console",
+                    "filters": ["correlation_id", "email_obfuscation"],
+                    "source_token": config.LOGTAIL_API_KEY
                 }
             },
             "loggers": {
@@ -50,7 +85,7 @@ async def configure_logging() -> None:
                     "level": "INFO"
                 },
                 "src": {
-                    "handlers": ["default", "rotating_file"],
+                    "handlers": handlers,
                     "level": "DEBUG" if isinstance(config, DevConfig) else "INFO",
                     "propagate": False
                 },
