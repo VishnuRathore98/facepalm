@@ -2,6 +2,7 @@ from fastapi import FastAPI, HTTPException
 from fastapi.exception_handlers import http_exception_handler
 from .routers.post import router as post_router
 from .routers.comment import router as comment_router
+from src.routers.user import router as user_router
 from .database import database
 from contextlib import asynccontextmanager
 from src.logging_conf import configure_logging
@@ -26,6 +27,7 @@ app.add_middleware(CorrelationIdMiddleware)
 
 app.include_router(post_router)
 app.include_router(comment_router)
+app.include_router(user_router)
 
 
 @app.get("/")
