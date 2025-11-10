@@ -3,16 +3,17 @@ import pytest
 from fastapi.testclient import TestClient
 from httpx import AsyncClient, ASGITransport
 import os
-os.environ['ENV_STATE'] = 'test'
+
+os.environ["ENV_STATE"] = "test"
 
 
-from ..database import database  # noqa:E402
-from ..main import app  # noqa:E402
+from src.database import database, user_table  # noqa:E402
+from src.main import app  # noqa:E402
 
 
-@pytest.fixture(scope='session')
+@pytest.fixture(scope="session")
 def anyio_backend():
-    return 'asyncio'
+    return "asyncio"
 
 
 @pytest.fixture()
@@ -30,5 +31,20 @@ async def db() -> AsyncGenerator:
 @pytest.fixture()
 async def async_client(client):
     transport = ASGITransport(app=app)
-    async with AsyncClient(transport=transport, base_url=client.base_url) as ac:
+    async with AsyncClient(
+        transport=transport,
+        base_url=client.base_url,
+    ) as ac:
         yield ac
+
+
+@pytest.fixture()
+async def registered_user(async_client: AsyncClient) -> dict:
+    user_details = {"email": "test@mail.com", "password": "12345678"}
+    await async_client.post("/register", json=user_details)
+    query = user_table.select().where(
+        user_table.c.email == user_details["email"],
+    )
+    user = await database.fetch_one(query)
+    user_details["id"] = user.id
+    return user_details
