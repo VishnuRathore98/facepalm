@@ -1,6 +1,8 @@
 import pytest
 from httpx import AsyncClient
 
+from src import security
+
 
 async def register_user(async_client: AsyncClient, email: str, password: str):
     return await async_client.post(
@@ -9,6 +11,14 @@ async def register_user(async_client: AsyncClient, email: str, password: str):
             "email": email,
             "password": password,
         },
+    )
+
+
+async def test_password_hashing():
+    password = "test123"
+    assert security.verify_password(
+        password,
+        security.get_password_hash(password),
     )
 
 
