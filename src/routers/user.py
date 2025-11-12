@@ -1,6 +1,12 @@
 from fastapi import APIRouter, HTTPException, status
+from sqlalchemy.sql.roles import AllowsLambdaRole
 from src.models.users import UserIn
-from src.security import get_password_hash, get_user
+from src.security import (
+    authenticate_user,
+    create_access_token,
+    get_password_hash,
+    get_user,
+)
 import logging
 from src.database import user_table, database
 
@@ -28,3 +34,10 @@ async def register(user: UserIn):
 
     await database.execute(query)
     return {"message": "User created."}
+
+
+@router.post("/login")
+async def login(user: UserIn):
+    user = await authenticate_user(user.email, user.password)
+    access_token = create_access_token(user.email)
+    return {"access_token": access_token, "token_type": "bearer"}

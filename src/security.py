@@ -1,13 +1,27 @@
 import logging
 from passlib.context import CryptContext
 from src.database import database, user_table
- 
+import datetime
+from jose import jwt
+from fastapi import HTTPException, status
+
 
 logger = logging.getLogger(__name__)
 
 
 pwd_context = CryptContext(schemes=["bcrypt"])
+ALGORITHM = "HS256"
+SECRET = "sldkfjwer23424ro234ihtrf349ugjw54389gj4p"
 
+def access_token_exp_min() -> int:
+    return 30
+
+def create_access_token(email: str):
+    logger.debug("Creating access token", extra={"email":email})
+    expire = datetime.datetime.now(datetime.timezone.utc) + datetime.timedelta(minutes=access_token_exp_min())
+    jwd_data = {"sub": email, "exp": expire}
+    encoded_jwt = jwt.encode(jwd_data, key=SECRET, algorithm=ALGORITHM)
+    return encoded_jwt
 
 def get_password_hash(password: str) -> str:
     return pwd_context.hash(password)
@@ -23,3 +37,14 @@ async def get_user(email: str):
     result = await database.fetch_one(query)
     if result:
         return result
+
+
+async def authenticate_user(email: str, password: str):
+    logger.debug("Authenticating user...", extra={"email": email})
+    user = await get_user(email)
+    if not user:
+        raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Not authorized")
+    if not verify_password(password, user.password):
+        raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Not authorized")
+
+    return user
