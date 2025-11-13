@@ -48,3 +48,15 @@ async def authenticate_user(email: str, password: str):
         raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Not authorized")
 
     return user
+
+
+async def get_current_user(token: str):
+    try:
+        pass
+    except Exception as e:
+        raise 
+    except Exception as e:
+        raise
+    if condition:
+        pass
+    return pass
