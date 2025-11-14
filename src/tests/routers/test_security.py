@@ -1,3 +1,4 @@
+from fastapi import HTTPException
 import pytest
 from jose import jwt
 
@@ -53,3 +54,16 @@ async def test_authenticate_user_wrong_password(registered_user: dict):
         await security.authenticate_user(
             email=registered_user["email"], password="4321"
         )
+
+
+@pytest.mark.anyio
+async def test_get_current_user(registered_user: dict):
+    token = security.create_access_token(email=registered_user["email"])
+    user = await security.get_current_user(token=token)
+    assert user.email == registered_user["email"]  # type: ignore
+
+
+@pytest.mark.anyio
+async def test_get_current_user_invalid_token():
+    with pytest.raises(HTTPException):
+        await security.get_current_user("invalid token")

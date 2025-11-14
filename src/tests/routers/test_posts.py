@@ -7,11 +7,6 @@ async def create_post(body: str, async_client: AsyncClient) -> dict:
     return response.json()
 
 
-@pytest.fixture()
-async def created_post(async_client: AsyncClient):
-    return await create_post("Test post", async_client)
-
-
 @pytest.mark.anyio
 async def test_create_post(async_client: AsyncClient):
     body = "Test Post"

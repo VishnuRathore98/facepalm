@@ -46,5 +46,15 @@ async def registered_user(async_client: AsyncClient) -> dict:
         user_table.c.email == user_details["email"],
     )
     user = await database.fetch_one(query)
-    user_details["id"] = user.id
+    user_details["id"] = user.id  # type: ignore
     return user_details
+
+
+async def create_post(body: str, async_client: AsyncClient) -> dict:
+    response = await async_client.post("/posts", json={"body": body})
+    return response.json()
+
+
+@pytest.fixture()
+async def created_post(async_client: AsyncClient):
+    return await create_post("Test post", async_client)
