@@ -1,5 +1,4 @@
 from fastapi import APIRouter, HTTPException, status
-from sqlalchemy.sql.roles import AllowsLambdaRole
 from src.models.users import UserIn
 from src.security import (
     authenticate_user,
