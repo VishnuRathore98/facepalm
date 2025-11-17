@@ -1,8 +1,8 @@
 import uuid
 from fastapi import APIRouter, HTTPException, Request
 from pydantic import UUID4
-from ..models.comment import CommentIn, CommentOut, UserPostWithComment
-from ..database import post_table, comment_table, database
+from models.comment import CommentIn, CommentOut, UserPostWithComment
+from database import post_table, comment_table, database
 import logging
 from models.users import User
 from security import get_current_user, oauth2_scheme

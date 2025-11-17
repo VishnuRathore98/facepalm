@@ -1,11 +1,15 @@
 from typing import Optional
 from functools import lru_cache
 from pydantic_settings import BaseSettings, SettingsConfigDict
+from pathlib import Path
+
+
+ENV_FILE = str(Path(__file__).resolve().parent.parent / ".env")
 
 
 class BaseConfig(BaseSettings):
     ENV_STATE: Optional[str] = None
-    model_config = SettingsConfigDict(env_file='.env', extra='ignore')
+    model_config = SettingsConfigDict(env_file=ENV_FILE, extra="ignore")
 
 
 class GlobalConfig(BaseConfig):
@@ -15,22 +19,22 @@ class GlobalConfig(BaseConfig):
 
 
 class DevConfig(GlobalConfig):
-    model_config = SettingsConfigDict(env_prefix='DEV_')
+    model_config = SettingsConfigDict(env_prefix="DEV_")
 
 
 class ProdConfig(GlobalConfig):
-    model_config = SettingsConfigDict(env_prefix='PROD_')
+    model_config = SettingsConfigDict(env_prefix="PROD_")
 
 
 class TestConfig(GlobalConfig):
     DATABASE_URL: str = "sqlite:///test.db"
     DB_FORCE_ROLL_BACK: bool = True
-    model_config = SettingsConfigDict(env_prefix='TEST_')
+    model_config = SettingsConfigDict(env_prefix="TEST_")
 
 
 @lru_cache()
 def get_config(env_state: str):
-    configs = {'dev': DevConfig, 'prod': ProdConfig, 'test': TestConfig}
+    configs = {"dev": DevConfig, "prod": ProdConfig, "test": TestConfig}
     return configs[env_state]()
 
 

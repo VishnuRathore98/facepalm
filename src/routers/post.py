@@ -1,7 +1,7 @@
 import uuid
 from fastapi import APIRouter, Request
-from ..models.post import UserPostIn, UserPostOut
-from ..database import post_table, database
+from models.post import UserPostIn, UserPostOut
+from database import post_table, database
 import logging
 from security import get_current_user, oauth2_scheme
 from models.users import User

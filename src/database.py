@@ -1,6 +1,6 @@
 import sqlalchemy
 import databases
-from .config import config
+from config import config
 
 
 metadata = sqlalchemy.MetaData()

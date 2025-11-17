@@ -1,13 +1,13 @@
 from fastapi import APIRouter, HTTPException, status
-from src.models.users import UserIn
-from src.security import (
+from models.users import UserIn
+from security import (
     authenticate_user,
     create_access_token,
     get_password_hash,
     get_user,
 )
 import logging
-from src.database import user_table, database
+from database import user_table, database
 
 
 router = APIRouter()

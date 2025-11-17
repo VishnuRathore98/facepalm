@@ -1,6 +1,7 @@
 import logging
 from passlib.context import CryptContext
-from src.database import database, user_table
+from argon2 import PasswordHasher
+from database import database, user_table
 import datetime
 from jose import jwt, JWTError, ExpiredSignatureError
 from fastapi import HTTPException, status
@@ -11,8 +12,9 @@ logger = logging.getLogger(__name__)
 
 
 pwd_context = CryptContext(schemes=["bcrypt"])
+ph = PasswordHasher()
 ALGORITHM = "HS256"
-SECRET = "sldkfjwer23424ro234ihtrf349ugjw54389gj4p"
+SECRET = "sldkfjwer23424ro2"
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="login")
 
 
@@ -38,11 +40,16 @@ def create_access_token(email: str):
 
 
 def get_password_hash(password: str) -> str:
-    return pwd_context.hash(password)
+    print("DEBUG → password repr:", repr(password))
+    print("DEBUG → char length:", len(password))
+    print("DEBUG → byte length:", len(password.encode()))
+    print(f"User password: {password}")
+    # return pwd_context.hash(password[:72])
+    return ph.hash(password)
 
 
 def verify_password(plain_password: str, hashed_password: str) -> bool:
-    return pwd_context.verify(plain_password, hashed_password)
+    return ph.verify(hashed_password, plain_password)
 
 
 async def get_user(email: str):
