@@ -103,3 +103,135 @@
 {"asctime": "17-11-2025T09:35:00", "msecs": 610.0, "levelname": "INFO", "correlation_id": "-", "name": "uvicorn.error", "lineno": 67, "message": "Waiting for application shutdown."}
 {"asctime": "17-11-2025T09:35:00", "msecs": 611.0, "levelname": "INFO", "correlation_id": "-", "name": "uvicorn.error", "lineno": 76, "message": "Application shutdown complete."}
 {"asctime": "17-11-2025T09:35:00", "msecs": 612.0, "levelname": "INFO", "correlation_id": "-", "name": "uvicorn.error", "lineno": 94, "message": "Finished server process [7189]", "color_message": "Finished server process [\u001b[36m%d\u001b[0m]"}
+{"asctime": "18-11-2025T05:34:00", "msecs": 523.0, "levelname": "INFO", "correlation_id": "-", "name": "uvicorn.error", "lineno": 62, "message": "Application startup complete."}
+{"asctime": "18-11-2025T05:34:27", "msecs": 841.0, "levelname": "INFO", "correlation_id": "fa3759fa", "name": "uvicorn.access", "lineno": 473, "message": "127.0.0.1:44554 - \"POST /login HTTP/1.1\" 200"}
+{"asctime": "18-11-2025T05:40:00", "msecs": 705.0, "levelname": "INFO", "correlation_id": "f11de58e", "name": "uvicorn.access", "lineno": 473, "message": "127.0.0.1:60370 - \"POST /post HTTP/1.1\" 404"}
+{"asctime": "18-11-2025T05:40:53", "msecs": 501.0, "levelname": "INFO", "correlation_id": "06b63895", "name": "uvicorn.access", "lineno": 473, "message": "127.0.0.1:49364 - \"GET /docs HTTP/1.1\" 200"}
+{"asctime": "18-11-2025T05:40:54", "msecs": 329.0, "levelname": "INFO", "correlation_id": "efb8a260", "name": "uvicorn.access", "lineno": 473, "message": "127.0.0.1:49364 - \"GET /openapi.json HTTP/1.1\" 200"}
+{"asctime": "18-11-2025T05:41:25", "msecs": 250.0, "levelname": "INFO", "correlation_id": "6d48a3ca", "name": "uvicorn.access", "lineno": 473, "message": "127.0.0.1:49378 - \"POST /posts HTTP/1.1\" 401"}
+{"asctime": "18-11-2025T05:41:48", "msecs": 88.0, "levelname": "INFO", "correlation_id": "ec946510", "name": "uvicorn.access", "lineno": 473, "message": "127.0.0.1:39432 - \"POST /posts HTTP/1.1\" 401"}
+{"asctime": "18-11-2025T05:43:33", "msecs": 712.0, "levelname": "INFO", "correlation_id": "bff5087c", "name": "uvicorn.access", "lineno": 473, "message": "127.0.0.1:60320 - \"POST /posts HTTP/1.1\" 201"}
+{"asctime": "18-11-2025T05:43:47", "msecs": 268.0, "levelname": "INFO", "correlation_id": "96d8978d", "name": "uvicorn.access", "lineno": 473, "message": "127.0.0.1:44936 - \"POST /posts HTTP/1.1\" 201"}
+{"asctime": "18-11-2025T05:46:38", "msecs": 956.0, "levelname": "INFO", "correlation_id": "-", "name": "uvicorn.error", "lineno": 264, "message": "Shutting down"}
+{"asctime": "18-11-2025T05:46:39", "msecs": 58.0, "levelname": "INFO", "correlation_id": "-", "name": "uvicorn.error", "lineno": 67, "message": "Waiting for application shutdown."}
+{"asctime": "18-11-2025T05:46:39", "msecs": 59.0, "levelname": "INFO", "correlation_id": "-", "name": "uvicorn.error", "lineno": 76, "message": "Application shutdown complete."}
+{"asctime": "18-11-2025T05:46:39", "msecs": 60.0, "levelname": "INFO", "correlation_id": "-", "name": "uvicorn.error", "lineno": 94, "message": "Finished server process [5330]", "color_message": "Finished server process [\u001b[36m%d\u001b[0m]"}
+{"asctime": "18-11-2025T05:46:39", "msecs": 795.0, "levelname": "INFO", "correlation_id": "-", "name": "uvicorn.error", "lineno": 62, "message": "Application startup complete."}
+{"asctime": "18-11-2025T05:46:47", "msecs": 210.0, "levelname": "INFO", "correlation_id": "7e4e9d68", "name": "uvicorn.access", "lineno": 473, "message": "127.0.0.1:41938 - \"GET /docs HTTP/1.1\" 200"}
+{"asctime": "18-11-2025T05:46:47", "msecs": 915.0, "levelname": "INFO", "correlation_id": "2c2947fc", "name": "uvicorn.access", "lineno": 473, "message": "127.0.0.1:41938 - \"GET /openapi.json HTTP/1.1\" 200"}
+{"asctime": "18-11-2025T05:46:58", "msecs": 351.0, "levelname": "INFO", "correlation_id": "0bedb83c", "name": "uvicorn.access", "lineno": 473, "message": "127.0.0.1:41942 - \"GET /docs HTTP/1.1\" 200"}
+{"asctime": "18-11-2025T05:46:58", "msecs": 724.0, "levelname": "INFO", "correlation_id": "7ae65ce3", "name": "uvicorn.access", "lineno": 473, "message": "127.0.0.1:41942 - \"GET /openapi.json HTTP/1.1\" 200"}
+{"asctime": "18-11-2025T05:50:36", "msecs": 726.0, "levelname": "INFO", "correlation_id": "-", "name": "uvicorn.error", "lineno": 264, "message": "Shutting down"}
+{"asctime": "18-11-2025T05:50:36", "msecs": 829.0, "levelname": "INFO", "correlation_id": "-", "name": "uvicorn.error", "lineno": 67, "message": "Waiting for application shutdown."}
+{"asctime": "18-11-2025T05:50:36", "msecs": 834.0, "levelname": "INFO", "correlation_id": "-", "name": "uvicorn.error", "lineno": 76, "message": "Application shutdown complete."}
+{"asctime": "18-11-2025T05:50:36", "msecs": 839.0, "levelname": "INFO", "correlation_id": "-", "name": "uvicorn.error", "lineno": 94, "message": "Finished server process [6199]", "color_message": "Finished server process [\u001b[36m%d\u001b[0m]"}
+{"asctime": "18-11-2025T05:50:37", "msecs": 851.0, "levelname": "INFO", "correlation_id": "-", "name": "uvicorn.error", "lineno": 62, "message": "Application startup complete."}
+{"asctime": "18-11-2025T05:50:58", "msecs": 924.0, "levelname": "INFO", "correlation_id": "bbcbcb24", "name": "uvicorn.access", "lineno": 473, "message": "127.0.0.1:59950 - \"GET /docs HTTP/1.1\" 200"}
+{"asctime": "18-11-2025T05:50:59", "msecs": 196.0, "levelname": "INFO", "correlation_id": "d6ce6c25", "name": "uvicorn.access", "lineno": 473, "message": "127.0.0.1:59950 - \"GET /openapi.json HTTP/1.1\" 200"}
+{"asctime": "18-11-2025T05:51:20", "msecs": 98.0, "levelname": "INFO", "correlation_id": "a5c776cf", "name": "uvicorn.access", "lineno": 473, "message": "127.0.0.1:59956 - \"POST /login HTTP/1.1\" 422"}
+{"asctime": "18-11-2025T06:49:24", "msecs": 321.0, "levelname": "INFO", "correlation_id": "-", "name": "uvicorn.error", "lineno": 264, "message": "Shutting down"}
+{"asctime": "18-11-2025T06:49:24", "msecs": 423.0, "levelname": "INFO", "correlation_id": "-", "name": "uvicorn.error", "lineno": 67, "message": "Waiting for application shutdown."}
+{"asctime": "18-11-2025T06:49:24", "msecs": 427.0, "levelname": "INFO", "correlation_id": "-", "name": "uvicorn.error", "lineno": 76, "message": "Application shutdown complete."}
+{"asctime": "18-11-2025T06:49:24", "msecs": 429.0, "levelname": "INFO", "correlation_id": "-", "name": "uvicorn.error", "lineno": 94, "message": "Finished server process [6300]", "color_message": "Finished server process [\u001b[36m%d\u001b[0m]"}
+{"asctime": "18-11-2025T06:49:25", "msecs": 373.0, "levelname": "INFO", "correlation_id": "-", "name": "uvicorn.error", "lineno": 62, "message": "Application startup complete."}
+{"asctime": "18-11-2025T06:52:23", "msecs": 146.0, "levelname": "INFO", "correlation_id": "-", "name": "uvicorn.error", "lineno": 264, "message": "Shutting down"}
+{"asctime": "18-11-2025T06:52:23", "msecs": 250.0, "levelname": "INFO", "correlation_id": "-", "name": "uvicorn.error", "lineno": 67, "message": "Waiting for application shutdown."}
+{"asctime": "18-11-2025T06:52:23", "msecs": 252.0, "levelname": "INFO", "correlation_id": "-", "name": "uvicorn.error", "lineno": 76, "message": "Application shutdown complete."}
+{"asctime": "18-11-2025T06:52:23", "msecs": 254.0, "levelname": "INFO", "correlation_id": "-", "name": "uvicorn.error", "lineno": 94, "message": "Finished server process [8287]", "color_message": "Finished server process [\u001b[36m%d\u001b[0m]"}
+{"asctime": "18-11-2025T06:52:24", "msecs": 356.0, "levelname": "INFO", "correlation_id": "-", "name": "uvicorn.error", "lineno": 62, "message": "Application startup complete."}
+{"asctime": "18-11-2025T06:52:38", "msecs": 559.0, "levelname": "INFO", "correlation_id": "d74c2309", "name": "uvicorn.access", "lineno": 473, "message": "127.0.0.1:55568 - \"POST /posts HTTP/1.1\" 422"}
+{"asctime": "18-11-2025T06:53:39", "msecs": 121.0, "levelname": "INFO", "correlation_id": "-", "name": "uvicorn.error", "lineno": 264, "message": "Shutting down"}
+{"asctime": "18-11-2025T06:53:39", "msecs": 224.0, "levelname": "INFO", "correlation_id": "-", "name": "uvicorn.error", "lineno": 67, "message": "Waiting for application shutdown."}
+{"asctime": "18-11-2025T06:53:39", "msecs": 227.0, "levelname": "INFO", "correlation_id": "-", "name": "uvicorn.error", "lineno": 76, "message": "Application shutdown complete."}
+{"asctime": "18-11-2025T06:53:39", "msecs": 230.0, "levelname": "INFO", "correlation_id": "-", "name": "uvicorn.error", "lineno": 94, "message": "Finished server process [8340]", "color_message": "Finished server process [\u001b[36m%d\u001b[0m]"}
+{"asctime": "18-11-2025T06:53:54", "msecs": 891.0, "levelname": "INFO", "correlation_id": "-", "name": "uvicorn.error", "lineno": 62, "message": "Application startup complete."}
+{"asctime": "18-11-2025T06:53:58", "msecs": 270.0, "levelname": "INFO", "correlation_id": "b9545184", "name": "uvicorn.access", "lineno": 473, "message": "127.0.0.1:44798 - \"POST /posts HTTP/1.1\" 422"}
+{"asctime": "18-11-2025T07:37:47", "msecs": 323.0, "levelname": "INFO", "correlation_id": "-", "name": "uvicorn.error", "lineno": 264, "message": "Shutting down"}
+{"asctime": "18-11-2025T07:37:47", "msecs": 426.0, "levelname": "INFO", "correlation_id": "-", "name": "uvicorn.error", "lineno": 67, "message": "Waiting for application shutdown."}
+{"asctime": "18-11-2025T07:37:47", "msecs": 429.0, "levelname": "INFO", "correlation_id": "-", "name": "uvicorn.error", "lineno": 76, "message": "Application shutdown complete."}
+{"asctime": "18-11-2025T07:37:47", "msecs": 431.0, "levelname": "INFO", "correlation_id": "-", "name": "uvicorn.error", "lineno": 94, "message": "Finished server process [8397]", "color_message": "Finished server process [\u001b[36m%d\u001b[0m]"}
+{"asctime": "18-11-2025T07:37:48", "msecs": 340.0, "levelname": "INFO", "correlation_id": "-", "name": "uvicorn.error", "lineno": 62, "message": "Application startup complete."}
+{"asctime": "18-11-2025T08:06:17", "msecs": 483.0, "levelname": "INFO", "correlation_id": "-", "name": "uvicorn.error", "lineno": 264, "message": "Shutting down"}
+{"asctime": "18-11-2025T08:06:17", "msecs": 589.0, "levelname": "INFO", "correlation_id": "-", "name": "uvicorn.error", "lineno": 67, "message": "Waiting for application shutdown."}
+{"asctime": "18-11-2025T08:06:17", "msecs": 591.0, "levelname": "INFO", "correlation_id": "-", "name": "uvicorn.error", "lineno": 76, "message": "Application shutdown complete."}
+{"asctime": "18-11-2025T08:06:17", "msecs": 593.0, "levelname": "INFO", "correlation_id": "-", "name": "uvicorn.error", "lineno": 94, "message": "Finished server process [9108]", "color_message": "Finished server process [\u001b[36m%d\u001b[0m]"}
+{"asctime": "18-11-2025T08:06:18", "msecs": 640.0, "levelname": "INFO", "correlation_id": "-", "name": "uvicorn.error", "lineno": 62, "message": "Application startup complete."}
+{"asctime": "18-11-2025T08:06:43", "msecs": 354.0, "levelname": "INFO", "correlation_id": "-", "name": "uvicorn.error", "lineno": 264, "message": "Shutting down"}
+{"asctime": "18-11-2025T08:06:43", "msecs": 457.0, "levelname": "INFO", "correlation_id": "-", "name": "uvicorn.error", "lineno": 67, "message": "Waiting for application shutdown."}
+{"asctime": "18-11-2025T08:06:43", "msecs": 458.0, "levelname": "INFO", "correlation_id": "-", "name": "uvicorn.error", "lineno": 76, "message": "Application shutdown complete."}
+{"asctime": "18-11-2025T08:06:43", "msecs": 460.0, "levelname": "INFO", "correlation_id": "-", "name": "uvicorn.error", "lineno": 94, "message": "Finished server process [9511]", "color_message": "Finished server process [\u001b[36m%d\u001b[0m]"}
+{"asctime": "18-11-2025T08:06:44", "msecs": 468.0, "levelname": "INFO", "correlation_id": "-", "name": "uvicorn.error", "lineno": 62, "message": "Application startup complete."}
+{"asctime": "18-11-2025T08:07:09", "msecs": 189.0, "levelname": "INFO", "correlation_id": "-", "name": "uvicorn.error", "lineno": 264, "message": "Shutting down"}
+{"asctime": "18-11-2025T08:07:09", "msecs": 293.0, "levelname": "INFO", "correlation_id": "-", "name": "uvicorn.error", "lineno": 67, "message": "Waiting for application shutdown."}
+{"asctime": "18-11-2025T08:07:09", "msecs": 299.0, "levelname": "INFO", "correlation_id": "-", "name": "uvicorn.error", "lineno": 76, "message": "Application shutdown complete."}
+{"asctime": "18-11-2025T08:07:09", "msecs": 304.0, "levelname": "INFO", "correlation_id": "-", "name": "uvicorn.error", "lineno": 94, "message": "Finished server process [9541]", "color_message": "Finished server process [\u001b[36m%d\u001b[0m]"}
+{"asctime": "18-11-2025T08:07:10", "msecs": 262.0, "levelname": "INFO", "correlation_id": "-", "name": "uvicorn.error", "lineno": 62, "message": "Application startup complete."}
+{"asctime": "18-11-2025T08:09:03", "msecs": 383.0, "levelname": "INFO", "correlation_id": "-", "name": "uvicorn.error", "lineno": 264, "message": "Shutting down"}
+{"asctime": "18-11-2025T08:09:03", "msecs": 486.0, "levelname": "INFO", "correlation_id": "-", "name": "uvicorn.error", "lineno": 67, "message": "Waiting for application shutdown."}
+{"asctime": "18-11-2025T08:09:03", "msecs": 492.0, "levelname": "INFO", "correlation_id": "-", "name": "uvicorn.error", "lineno": 76, "message": "Application shutdown complete."}
+{"asctime": "18-11-2025T08:09:03", "msecs": 500.0, "levelname": "INFO", "correlation_id": "-", "name": "uvicorn.error", "lineno": 94, "message": "Finished server process [9554]", "color_message": "Finished server process [\u001b[36m%d\u001b[0m]"}
+{"asctime": "18-11-2025T08:09:04", "msecs": 462.0, "levelname": "INFO", "correlation_id": "-", "name": "uvicorn.error", "lineno": 62, "message": "Application startup complete."}
+{"asctime": "18-11-2025T08:15:14", "msecs": 473.0, "levelname": "INFO", "correlation_id": "-", "name": "uvicorn.error", "lineno": 264, "message": "Shutting down"}
+{"asctime": "18-11-2025T08:15:14", "msecs": 575.0, "levelname": "INFO", "correlation_id": "-", "name": "uvicorn.error", "lineno": 67, "message": "Waiting for application shutdown."}
+{"asctime": "18-11-2025T08:15:14", "msecs": 577.0, "levelname": "INFO", "correlation_id": "-", "name": "uvicorn.error", "lineno": 76, "message": "Application shutdown complete."}
+{"asctime": "18-11-2025T08:15:14", "msecs": 579.0, "levelname": "INFO", "correlation_id": "-", "name": "uvicorn.error", "lineno": 94, "message": "Finished server process [9648]", "color_message": "Finished server process [\u001b[36m%d\u001b[0m]"}
+{"asctime": "18-11-2025T08:15:15", "msecs": 583.0, "levelname": "INFO", "correlation_id": "-", "name": "uvicorn.error", "lineno": 62, "message": "Application startup complete."}
+{"asctime": "18-11-2025T08:17:24", "msecs": 165.0, "levelname": "INFO", "correlation_id": "-", "name": "uvicorn.error", "lineno": 264, "message": "Shutting down"}
+{"asctime": "18-11-2025T08:17:24", "msecs": 267.0, "levelname": "INFO", "correlation_id": "-", "name": "uvicorn.error", "lineno": 67, "message": "Waiting for application shutdown."}
+{"asctime": "18-11-2025T08:17:24", "msecs": 269.0, "levelname": "INFO", "correlation_id": "-", "name": "uvicorn.error", "lineno": 76, "message": "Application shutdown complete."}
+{"asctime": "18-11-2025T08:17:24", "msecs": 271.0, "levelname": "INFO", "correlation_id": "-", "name": "uvicorn.error", "lineno": 94, "message": "Finished server process [9913]", "color_message": "Finished server process [\u001b[36m%d\u001b[0m]"}
+{"asctime": "18-11-2025T08:17:25", "msecs": 256.0, "levelname": "INFO", "correlation_id": "-", "name": "uvicorn.error", "lineno": 62, "message": "Application startup complete."}
+{"asctime": "18-11-2025T08:17:38", "msecs": 930.0, "levelname": "INFO", "correlation_id": "-", "name": "uvicorn.error", "lineno": 264, "message": "Shutting down"}
+{"asctime": "18-11-2025T08:17:39", "msecs": 36.0, "levelname": "INFO", "correlation_id": "-", "name": "uvicorn.error", "lineno": 67, "message": "Waiting for application shutdown."}
+{"asctime": "18-11-2025T08:17:39", "msecs": 42.0, "levelname": "INFO", "correlation_id": "-", "name": "uvicorn.error", "lineno": 76, "message": "Application shutdown complete."}
+{"asctime": "18-11-2025T08:17:39", "msecs": 47.0, "levelname": "INFO", "correlation_id": "-", "name": "uvicorn.error", "lineno": 94, "message": "Finished server process [9966]", "color_message": "Finished server process [\u001b[36m%d\u001b[0m]"}
+{"asctime": "18-11-2025T08:17:39", "msecs": 960.0, "levelname": "INFO", "correlation_id": "-", "name": "uvicorn.error", "lineno": 62, "message": "Application startup complete."}
+{"asctime": "18-11-2025T08:19:43", "msecs": 892.0, "levelname": "INFO", "correlation_id": "-", "name": "uvicorn.error", "lineno": 264, "message": "Shutting down"}
+{"asctime": "18-11-2025T08:19:43", "msecs": 998.0, "levelname": "INFO", "correlation_id": "-", "name": "uvicorn.error", "lineno": 67, "message": "Waiting for application shutdown."}
+{"asctime": "18-11-2025T08:19:44", "msecs": 0.0, "levelname": "INFO", "correlation_id": "-", "name": "uvicorn.error", "lineno": 76, "message": "Application shutdown complete."}
+{"asctime": "18-11-2025T08:19:44", "msecs": 1.0, "levelname": "INFO", "correlation_id": "-", "name": "uvicorn.error", "lineno": 94, "message": "Finished server process [9976]", "color_message": "Finished server process [\u001b[36m%d\u001b[0m]"}
+{"asctime": "18-11-2025T08:19:44", "msecs": 888.0, "levelname": "INFO", "correlation_id": "-", "name": "uvicorn.error", "lineno": 62, "message": "Application startup complete."}
+{"asctime": "18-11-2025T08:21:23", "msecs": 401.0, "levelname": "INFO", "correlation_id": "-", "name": "uvicorn.error", "lineno": 264, "message": "Shutting down"}
+{"asctime": "18-11-2025T08:21:23", "msecs": 504.0, "levelname": "INFO", "correlation_id": "-", "name": "uvicorn.error", "lineno": 67, "message": "Waiting for application shutdown."}
+{"asctime": "18-11-2025T08:21:23", "msecs": 506.0, "levelname": "INFO", "correlation_id": "-", "name": "uvicorn.error", "lineno": 76, "message": "Application shutdown complete."}
+{"asctime": "18-11-2025T08:21:23", "msecs": 508.0, "levelname": "INFO", "correlation_id": "-", "name": "uvicorn.error", "lineno": 94, "message": "Finished server process [9995]", "color_message": "Finished server process [\u001b[36m%d\u001b[0m]"}
+{"asctime": "18-11-2025T08:21:24", "msecs": 459.0, "levelname": "INFO", "correlation_id": "-", "name": "uvicorn.error", "lineno": 62, "message": "Application startup complete."}
+{"asctime": "18-11-2025T08:22:35", "msecs": 830.0, "levelname": "INFO", "correlation_id": "-", "name": "uvicorn.error", "lineno": 264, "message": "Shutting down"}
+{"asctime": "18-11-2025T08:22:35", "msecs": 932.0, "levelname": "INFO", "correlation_id": "-", "name": "uvicorn.error", "lineno": 67, "message": "Waiting for application shutdown."}
+{"asctime": "18-11-2025T08:22:35", "msecs": 942.0, "levelname": "INFO", "correlation_id": "-", "name": "uvicorn.error", "lineno": 76, "message": "Application shutdown complete."}
+{"asctime": "18-11-2025T08:22:35", "msecs": 948.0, "levelname": "INFO", "correlation_id": "-", "name": "uvicorn.error", "lineno": 94, "message": "Finished server process [10057]", "color_message": "Finished server process [\u001b[36m%d\u001b[0m]"}
+{"asctime": "18-11-2025T08:22:36", "msecs": 939.0, "levelname": "INFO", "correlation_id": "-", "name": "uvicorn.error", "lineno": 62, "message": "Application startup complete."}
+{"asctime": "18-11-2025T08:23:18", "msecs": 237.0, "levelname": "INFO", "correlation_id": "-", "name": "uvicorn.error", "lineno": 264, "message": "Shutting down"}
+{"asctime": "18-11-2025T08:23:18", "msecs": 340.0, "levelname": "INFO", "correlation_id": "-", "name": "uvicorn.error", "lineno": 67, "message": "Waiting for application shutdown."}
+{"asctime": "18-11-2025T08:23:18", "msecs": 345.0, "levelname": "INFO", "correlation_id": "-", "name": "uvicorn.error", "lineno": 76, "message": "Application shutdown complete."}
+{"asctime": "18-11-2025T08:23:18", "msecs": 350.0, "levelname": "INFO", "correlation_id": "-", "name": "uvicorn.error", "lineno": 94, "message": "Finished server process [10116]", "color_message": "Finished server process [\u001b[36m%d\u001b[0m]"}
+{"asctime": "18-11-2025T08:23:19", "msecs": 346.0, "levelname": "INFO", "correlation_id": "-", "name": "uvicorn.error", "lineno": 62, "message": "Application startup complete."}
+{"asctime": "18-11-2025T08:24:11", "msecs": 318.0, "levelname": "INFO", "correlation_id": "-", "name": "uvicorn.error", "lineno": 264, "message": "Shutting down"}
+{"asctime": "18-11-2025T08:24:11", "msecs": 421.0, "levelname": "INFO", "correlation_id": "-", "name": "uvicorn.error", "lineno": 67, "message": "Waiting for application shutdown."}
+{"asctime": "18-11-2025T08:24:11", "msecs": 426.0, "levelname": "INFO", "correlation_id": "-", "name": "uvicorn.error", "lineno": 76, "message": "Application shutdown complete."}
+{"asctime": "18-11-2025T08:24:11", "msecs": 431.0, "levelname": "INFO", "correlation_id": "-", "name": "uvicorn.error", "lineno": 94, "message": "Finished server process [10155]", "color_message": "Finished server process [\u001b[36m%d\u001b[0m]"}
+{"asctime": "18-11-2025T08:24:12", "msecs": 344.0, "levelname": "INFO", "correlation_id": "-", "name": "uvicorn.error", "lineno": 62, "message": "Application startup complete."}
+{"asctime": "18-11-2025T08:25:04", "msecs": 899.0, "levelname": "INFO", "correlation_id": "-", "name": "uvicorn.error", "lineno": 264, "message": "Shutting down"}
+{"asctime": "18-11-2025T08:25:05", "msecs": 3.0, "levelname": "INFO", "correlation_id": "-", "name": "uvicorn.error", "lineno": 67, "message": "Waiting for application shutdown."}
+{"asctime": "18-11-2025T08:25:05", "msecs": 5.0, "levelname": "INFO", "correlation_id": "-", "name": "uvicorn.error", "lineno": 76, "message": "Application shutdown complete."}
+{"asctime": "18-11-2025T08:25:05", "msecs": 6.0, "levelname": "INFO", "correlation_id": "-", "name": "uvicorn.error", "lineno": 94, "message": "Finished server process [10169]", "color_message": "Finished server process [\u001b[36m%d\u001b[0m]"}
+{"asctime": "18-11-2025T08:25:05", "msecs": 900.0, "levelname": "INFO", "correlation_id": "-", "name": "uvicorn.error", "lineno": 62, "message": "Application startup complete."}
+{"asctime": "18-11-2025T08:25:21", "msecs": 672.0, "levelname": "INFO", "correlation_id": "-", "name": "uvicorn.error", "lineno": 264, "message": "Shutting down"}
+{"asctime": "18-11-2025T08:25:21", "msecs": 774.0, "levelname": "INFO", "correlation_id": "-", "name": "uvicorn.error", "lineno": 67, "message": "Waiting for application shutdown."}
+{"asctime": "18-11-2025T08:25:21", "msecs": 778.0, "levelname": "INFO", "correlation_id": "-", "name": "uvicorn.error", "lineno": 76, "message": "Application shutdown complete."}
+{"asctime": "18-11-2025T08:25:21", "msecs": 782.0, "levelname": "INFO", "correlation_id": "-", "name": "uvicorn.error", "lineno": 94, "message": "Finished server process [10199]", "color_message": "Finished server process [\u001b[36m%d\u001b[0m]"}
+{"asctime": "18-11-2025T08:25:22", "msecs": 715.0, "levelname": "INFO", "correlation_id": "-", "name": "uvicorn.error", "lineno": 62, "message": "Application startup complete."}
+{"asctime": "18-11-2025T08:25:54", "msecs": 484.0, "levelname": "INFO", "correlation_id": "-", "name": "uvicorn.error", "lineno": 264, "message": "Shutting down"}
+{"asctime": "18-11-2025T08:25:54", "msecs": 586.0, "levelname": "INFO", "correlation_id": "-", "name": "uvicorn.error", "lineno": 67, "message": "Waiting for application shutdown."}
+{"asctime": "18-11-2025T08:25:54", "msecs": 589.0, "levelname": "INFO", "correlation_id": "-", "name": "uvicorn.error", "lineno": 76, "message": "Application shutdown complete."}
+{"asctime": "18-11-2025T08:25:54", "msecs": 590.0, "levelname": "INFO", "correlation_id": "-", "name": "uvicorn.error", "lineno": 94, "message": "Finished server process [10212]", "color_message": "Finished server process [\u001b[36m%d\u001b[0m]"}
+{"asctime": "18-11-2025T08:25:55", "msecs": 656.0, "levelname": "INFO", "correlation_id": "-", "name": "uvicorn.error", "lineno": 62, "message": "Application startup complete."}
+{"asctime": "18-11-2025T08:26:07", "msecs": 725.0, "levelname": "INFO", "correlation_id": "-", "name": "uvicorn.error", "lineno": 264, "message": "Shutting down"}
+{"asctime": "18-11-2025T08:26:07", "msecs": 828.0, "levelname": "INFO", "correlation_id": "-", "name": "uvicorn.error", "lineno": 67, "message": "Waiting for application shutdown."}
+{"asctime": "18-11-2025T08:26:07", "msecs": 830.0, "levelname": "INFO", "correlation_id": "-", "name": "uvicorn.error", "lineno": 76, "message": "Application shutdown complete."}
+{"asctime": "18-11-2025T08:26:07", "msecs": 832.0, "levelname": "INFO", "correlation_id": "-", "name": "uvicorn.error", "lineno": 94, "message": "Finished server process [10220]", "color_message": "Finished server process [\u001b[36m%d\u001b[0m]"}
+{"asctime": "18-11-2025T08:26:08", "msecs": 866.0, "levelname": "INFO", "correlation_id": "-", "name": "uvicorn.error", "lineno": 62, "message": "Application startup complete."}
+{"asctime": "18-11-2025T08:28:16", "msecs": 952.0, "levelname": "INFO", "correlation_id": "-", "name": "uvicorn.error", "lineno": 264, "message": "Shutting down"}
+{"asctime": "18-11-2025T08:28:17", "msecs": 58.0, "levelname": "INFO", "correlation_id": "-", "name": "uvicorn.error", "lineno": 67, "message": "Waiting for application shutdown."}
+{"asctime": "18-11-2025T08:28:17", "msecs": 63.0, "levelname": "INFO", "correlation_id": "-", "name": "uvicorn.error", "lineno": 76, "message": "Application shutdown complete."}
+{"asctime": "18-11-2025T08:28:17", "msecs": 68.0, "levelname": "INFO", "correlation_id": "-", "name": "uvicorn.error", "lineno": 94, "message": "Finished server process [10232]", "color_message": "Finished server process [\u001b[36m%d\u001b[0m]"}

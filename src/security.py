@@ -15,7 +15,7 @@ pwd_context = CryptContext(schemes=["bcrypt"])
 ph = PasswordHasher()
 ALGORITHM = "HS256"
 SECRET = "sldkfjwer23424ro2"
-oauth2_scheme = OAuth2PasswordBearer(tokenUrl="login")
+oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/login")
 
 
 credentials_exception = HTTPException(
