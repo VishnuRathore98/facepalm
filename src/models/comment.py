@@ -1,5 +1,5 @@
-from pydantic import UUID4, BaseModel
-from .post import UserPostIn
+from pydantic import BaseModel
+from .post import UserPostOut
 
 
 class CommentIn(BaseModel):
@@ -9,8 +9,9 @@ class CommentIn(BaseModel):
 
 class CommentOut(CommentIn):
     id: str
+    user_id: str
 
 
 class UserPostWithComment(BaseModel):
-    post: UserPostIn
-    comments: list[CommentIn]
+    post: UserPostOut
+    comments: list[CommentOut]

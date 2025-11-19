@@ -7,3 +7,4 @@ class UserPostIn(BaseModel):
 
 class UserPostOut(UserPostIn):
     id: UUID4
+    user_id: str

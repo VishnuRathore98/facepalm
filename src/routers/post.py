@@ -1,9 +1,11 @@
+from typing import Annotated
 import uuid
 from fastapi import APIRouter, Depends
 from models.post import UserPostIn, UserPostOut
 from database import post_table, database
 import logging
-from security import get_current_user
+from security import get_current_user, oauth2_scheme
+from models.users import User
 
 
 router = APIRouter()
@@ -15,11 +17,13 @@ logger = logging.getLogger(__name__)
     "/posts",
     response_model=UserPostOut,
     status_code=201,
-    dependencies=[Depends(get_current_user)],
 )
-async def create_post(post: UserPostIn):
+async def create_post(
+    post: UserPostIn, current_user: Annotated[User, Depends(get_current_user)]
+):
     data = post.model_dump()
-    new_post = {**data, "id": str(uuid.uuid4())}
+    print(">>> Current user: ", current_user)
+    new_post = {**data, "id": str(uuid.uuid4()), "user_id": current_user.id}
     query = post_table.insert().values(new_post)
     record_id = await database.execute(query)
     return {**new_post, "record_id": record_id}
