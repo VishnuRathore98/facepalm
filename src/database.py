@@ -1,3 +1,4 @@
+import uuid
 import sqlalchemy
 import databases
 from config import config
@@ -13,6 +14,7 @@ post_table = sqlalchemy.Table(
     sqlalchemy.Column("body", sqlalchemy.String),
     sqlalchemy.Column(
         "user_id",
+        sqlalchemy.String,
         sqlalchemy.ForeignKey("users.id"),
         nullable=False,
     ),
@@ -22,7 +24,13 @@ post_table = sqlalchemy.Table(
 user_table = sqlalchemy.Table(
     "users",
     metadata,
-    sqlalchemy.Column("id", sqlalchemy.String, primary_key=True),
+    sqlalchemy.Column(
+        "id",
+        sqlalchemy.String,
+        primary_key=True,
+        nullable=False,
+        insert_default=lambda: str(uuid.uuid4()),
+    ),
     sqlalchemy.Column("email", sqlalchemy.String, unique=True),
     sqlalchemy.Column("password", sqlalchemy.String),
 )

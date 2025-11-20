@@ -29,6 +29,8 @@ async def register(user: UserIn):
         password=hashed_password,
     )
 
+    #    print("query", query)
+    print(query.compile(compile_kwargs={"literal_binds": True}))
     logger.debug(query)
 
     await database.execute(query)
@@ -38,5 +40,5 @@ async def register(user: UserIn):
 @router.post("/login")
 async def login(user: UserIn):
     user = await authenticate_user(user.email, user.password)
-    access_token = create_access_token(user.id)
+    access_token = create_access_token(str(user.id))
     return {"access_token": access_token, "token_type": "bearer"}

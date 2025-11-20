@@ -1,3 +1,9 @@
+import logging
+from logging_conf import configure_logging
+
+configure_logging()
+logger = logging.getLogger(__name__)
+
 from fastapi import FastAPI, HTTPException
 from fastapi.exception_handlers import http_exception_handler
 from routers.post import router as post_router
@@ -5,17 +11,11 @@ from routers.comment import router as comment_router
 from routers.user import router as user_router
 from database import database
 from contextlib import asynccontextmanager
-from logging_conf import configure_logging
 from asgi_correlation_id import CorrelationIdMiddleware
-import logging
-
-
-logger = logging.getLogger(__name__)
 
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    await configure_logging()
     await database.connect()
     yield
     await database.disconnect()

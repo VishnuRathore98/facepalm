@@ -4,7 +4,7 @@ from fastapi import APIRouter, Depends
 from models.post import UserPostIn, UserPostOut
 from database import post_table, database
 import logging
-from security import get_current_user, oauth2_scheme
+from security import get_current_user
 from models.users import User
 
 
@@ -25,6 +25,7 @@ async def create_post(
     print(">>> Current user: ", current_user)
     new_post = {**data, "id": str(uuid.uuid4()), "user_id": current_user.id}
     query = post_table.insert().values(new_post)
+    print("query: ", query)
     record_id = await database.execute(query)
     return {**new_post, "record_id": record_id}
 

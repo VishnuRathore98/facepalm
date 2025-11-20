@@ -3,10 +3,10 @@ from logging.config import dictConfig
 from config import DevConfig, config
 
 
-def obfuscated(email: str, obfuscated_length: int) -> int:
+def obfuscated(email: str, obfuscated_length: int) -> str:
     characters = email[:obfuscated_length]
     first, last = email.split("@")
-    return characters + ("*" * (len(first) - characters)) + "@" + last
+    return characters + ("*" * (len(first) - len(characters))) + "@" + last
 
 
 class EmailObfuscationFilter(logging.Filter):
@@ -25,7 +25,7 @@ if isinstance(config, DevConfig):
     handlers = ["default", "rotating_file", "logtail"]
 
 
-async def configure_logging() -> None:
+def configure_logging() -> None:
     dictConfig(
         {
             "version": 1,
@@ -79,11 +79,12 @@ async def configure_logging() -> None:
                 },
             },
             "loggers": {
+                "root": {"handlers": ["default", "rotating_file"], "level": "INFO"},
                 "uvicorn": {"handlers": ["default", "rotating_file"], "level": "INFO"},
                 "src": {
                     "handlers": handlers,
                     "level": "DEBUG" if isinstance(config, DevConfig) else "INFO",
-                    "propagate": False,
+                    "propagate": True,
                 },
                 "databases": {"handlers": ["default"], "level": "WARNING"},
                 "aiosqlite": {"handlers": ["default"], "level": "WARNING"},

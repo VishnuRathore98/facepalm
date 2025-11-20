@@ -85,7 +85,10 @@ async def authenticate_user(email: str, password: str):
 
 async def get_current_user(token: str = Depends(oauth2_scheme)):
     try:
-        payload = jwt.decode(token=token, key=SECRET, algorithms=[ALGORITHM])
+        print("inside try")
+        print(f"token: {token}")
+        payload = jwt.decode(token=token, key=SECRET, algorithms=ALGORITHM)
+        print("payload: ", payload)
         user_id = payload.get("sub")
         if user_id is None:
             raise credentials_exception
