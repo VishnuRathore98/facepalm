@@ -1,4 +1,6 @@
-from fastapi import APIRouter, HTTPException, status
+from typing import Annotated
+from fastapi import APIRouter, Depends, HTTPException, status
+from fastapi.security import OAuth2PasswordRequestForm
 from models.users import UserIn
 from security import (
     authenticate_user,
@@ -38,7 +40,9 @@ async def register(user: UserIn):
 
 
 @router.post("/login")
-async def login(user: UserIn):
-    user = await authenticate_user(user.email, user.password)
+async def login(
+    form_data: Annotated[OAuth2PasswordRequestForm, Depends()],
+):
+    user = await authenticate_user(form_data.username, form_data.password)
     access_token = create_access_token(str(user.id))
     return {"access_token": access_token, "token_type": "bearer"}
