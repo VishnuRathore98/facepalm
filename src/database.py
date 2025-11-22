@@ -20,6 +20,25 @@ post_table = sqlalchemy.Table(
     ),
 )
 
+like_table = sqlalchemy.Table(
+    "likes",
+    metadata,
+    sqlalchemy.Column("id", sqlalchemy.String, primary_key=True),
+    sqlalchemy.Column(
+        "post_id",
+        sqlalchemy.String,
+        sqlalchemy.ForeignKey("posts.id"),
+        nullable=False,
+    ),
+
+   sqlalchemy.Column(
+        "user_id",
+        sqlalchemy.String,
+        sqlalchemy.ForeignKey("users.id"),
+        nullable=False,
+    ),
+
+)
 
 user_table = sqlalchemy.Table(
     "users",
