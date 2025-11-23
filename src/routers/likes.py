@@ -4,8 +4,7 @@ from fastapi import APIRouter, Depends, HTTPException
 from security import get_current_user
 from models.likes import PostLike, PostLikeIn
 from routers.comment import find_post
-import database
-from database import like_table
+from database import like_table, database
 from src.models.users import User
 
 

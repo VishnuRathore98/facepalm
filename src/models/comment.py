@@ -12,6 +12,11 @@ class CommentOut(CommentIn):
     user_id: str
 
 
-class UserPostWithComment(BaseModel):
+class UserPostWithLikes(BaseModel):
     post: UserPostOut
+    likes: int
+
+
+class UserPostWithComment(BaseModel):
+    post: UserPostWithLikes
     comments: list[CommentOut]

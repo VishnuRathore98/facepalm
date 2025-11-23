@@ -1,14 +1,24 @@
 import uuid
 from fastapi import APIRouter, Depends, HTTPException
 from models.comment import CommentIn, CommentOut, UserPostWithComment
-from database import post_table, comment_table, database
+from database import post_table, comment_table, database, like_table
 import logging
+import sqlalchemy
 from security import get_current_user
 
 
 router = APIRouter()
 
 logger = logging.getLogger(__name__)
+
+select_post_and_likes = (
+    sqlalchemy.select(
+        post_table,
+        sqlalchemy.func.count(like_table.c.id).label("likes"),
+    )
+    .select_from(post_table.outerjoin(like_table))
+    .group_by(post_table.c.id)
+)
 
 
 async def find_post(post_id: str):
@@ -36,7 +46,9 @@ async def get_comments_on_post(post_id: str):
     dependencies=[Depends(get_current_user)],
 )
 async def get_post_with_comments(post_id: str):
-    post = await find_post(post_id)
+    query = select_post_and_likes.where(post_table.c.id == post_id)
+
+    post = await database.fetch_one(query)
     if not post:
         raise HTTPException(status_code=404, detail="No Post found!")
 
